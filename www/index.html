@@ -1,0 +1,136 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+</head>
+
+<style>
+	td {
+        border: 2px solid black;
+		width: 20vw;
+		height: 20vw;
+	}
+
+	.red {
+		background-color: red;
+	}
+
+    h2 {
+        text-align: left;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    img {
+        height: 100%;
+        width: 100wv;
+    }
+
+    .noborder {
+        border: 0px;
+        border: none;
+    }
+</style>
+
+<body>
+    <h1>Mäng</h1>
+
+    <center>
+        <table Class="noborder">
+            <tr>
+                <td Class="noborder">
+                    <img src="./img/Süda.png">
+                </td>
+                <td Class="noborder">
+                    <text>3</text>
+                </td>
+                <td Class="noborder">
+                    <img src="./img/Täht.png">
+                </td>
+                <td Class="noborder">
+                    <text>0</text>
+                </td>
+            </tr>
+        </table>
+    </center>
+
+    <center>
+        <table style="width:100%">
+            <tr>
+                <td id="11"></td>
+                <td id="12"></td> 
+                <td id="13"></td>
+                <td id="14"></td> 
+                <td id="15"></td>
+            </tr>
+            <tr>
+                <td id="21"></td>
+                <td id="22"></td> 
+                <td id="23"></td>
+                <td id="24"></td> 
+                <td id="25"></td>
+            </tr>
+            <tr>
+                <td id="31"></td>
+                <td id="32"></td> 
+                <td id="33"></td>
+                <td id="34"></td> 
+                <td id="35"></td>
+            </tr>
+            <tr>
+                <td id="41"></td>
+                <td id="42"></td> 
+                <td id="43"></td>
+                <td id="44"></td> 
+                <td id="45"></td>
+            </tr>
+            <tr>
+                <td id="51"></td>
+                <td id="52"></td> 
+                <td id="53"></td>
+                <td id="54"></td> 
+                <td id="55"></td>
+            </tr>
+        </table>
+     </center>
+</body>
+
+<script>
+	function getRandomNumber(){
+		return Math.floor(Math.random() * 5) + 1 ;
+	}
+
+	function getRandomSquare(){
+		let y = getRandomNumber().toString();
+		let x = getRandomNumber().toString();
+		console.log(y + "	" + x);
+		return y+x;
+	}
+
+	function makeRedSquare(){
+		$("td").removeClass("red");
+		let id = getRandomSquare();
+		console.log(id);
+		$("#" + id).addClass("red");
+	}
+
+	setInterval(makeRedSquare, 3000);
+
+
+
+	//while (true){
+	//	setTimeout(makeRedSquare, 3000);
+	//}
+
+	//$("td").removeClassClass("red");
+
+	//setTimeout(makeRedSquare, 3000);
+	//setTimeout(makeRedSquare, 6000);
+	//setTimeout(makeRedSquare, 9000);
+	//setTimeout(makeRedSquare, 12000);
+	//setTimeout(makeRedSquare, 15000);
+</script>
+
+</html>
